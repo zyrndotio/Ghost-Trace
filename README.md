@@ -2,6 +2,12 @@
 
 Ghost Trace helps trace confusing diagnostics back to their likely upstream cause. It examines the complete active file with line numbers and the error diagnostics reported by VS Code, then gives guidance without editing your code.
 
+## Preview
+
+<video src="./assets/demo.mp4" controls width="100%"></video>
+
+[Open the demo video](./assets/demo.mp4) if the video player is unavailable.
+
 ## Features
 
 - **`@trace` chat participant:** Ask `@trace` to diagnose the active editor. It includes the numbered source and current error diagnostics from all files, then explains the likely root cause and why a later diagnostic may have cascaded from it.
