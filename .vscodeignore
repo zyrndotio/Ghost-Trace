@@ -7,3 +7,6 @@ src/**
 **/*.map
 **/*.ts
 **/.vscode-test.*
+assets/demo.mp4
+bun.lock
+.github/**

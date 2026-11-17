@@ -2,13 +2,13 @@
   "name": "ghost-trace",
   "displayName": "ghost-trace",
   "description": "Finds phantom errors on blank lines.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "zyrndotio",
   "author": "zyrndotio",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com"
+    "url": "https://github.com/zyrndotio/Ghost-Trace"
   },
   "icon": "assets/icon.png",
   "keywords": [

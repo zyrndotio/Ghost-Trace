@@ -4,9 +4,7 @@ Ghost Trace helps trace confusing diagnostics back to their likely upstream caus
 
 ## Preview
 
-[![Ghost Trace running in VS Code](./assets/preview.png)](./assets/demo.mp4)
-
-[Open the full demo video](./assets/demo.mp4).
+![Ghost Trace running in VS Code](./assets/preview.png)
 
 ## Features
 
