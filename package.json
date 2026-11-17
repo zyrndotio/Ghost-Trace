@@ -1,0 +1,93 @@
+{
+  "name": "ghost-trace",
+  "displayName": "ghost-trace",
+  "description": "Finds phantom errors on blank lines.",
+  "version": "0.0.1",
+  "publisher": "zyrndotio",
+  "author": "zyrndotio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com.git"
+  },
+  "icon": "assets/icon.png",
+  "keywords": [
+    "copilot",
+    "vscode",
+    "debugging",
+    "bun",
+    "typescript",
+    "language-model-tool"
+  ],
+  "engines": {
+    "vscode": "^1.146.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onChatParticipant:ghost-trace.trace",
+    "onLanguageModelTool:ghost_trace_diagnose"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "ghost-trace.trace",
+        "name": "trace",
+        "fullName": "Ghost Trace",
+        "description": "Trace diagnostic errors back to the line where the syntax actually broke."
+      }
+    ],
+    "languageModelTools": [
+      {
+        "name": "ghost_trace_diagnose",
+        "toolReferenceName": "ghostTrace",
+        "displayName": "Ghost Trace Error Locator",
+        "canBeReferencedInPrompt": true,
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "targetLine": {
+              "type": "number",
+              "description": "Optional one-based line number to focus the diagnosis on."
+            }
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "ghost-trace.jumpToLine",
+        "title": "Ghost Trace: Jump to Line"
+      },
+      {
+        "command": "ghost-trace.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "bun run compile",
+    "compile": "bun build ./src/extension.ts --outdir ./out --target=node --format=cjs --external=vscode",
+    "watch": "bun build ./src/extension.ts --outdir ./out --target=node --format=cjs --external=vscode --watch",
+    "pretest": "bun run compile && bun run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.146.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
