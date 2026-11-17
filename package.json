@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com.git"
+    "url": "https://github.com"
   },
   "icon": "assets/icon.png",
   "keywords": [
@@ -27,7 +27,7 @@
   ],
   "activationEvents": [
     "onChatParticipant:ghost-trace.trace",
-    "onLanguageModelTool:ghost_trace_diagnose"
+    "onLanguageModelTool:ghost_trace"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -41,7 +41,8 @@
     ],
     "languageModelTools": [
       {
-        "name": "ghost_trace_diagnose",
+        "name": "ghost_trace",
+        "modelDescription": "A tool for locating and diagnosing ghost errors in the code.",
         "toolReferenceName": "ghostTrace",
         "displayName": "Ghost Trace Error Locator",
         "canBeReferencedInPrompt": true,
@@ -60,10 +61,6 @@
       {
         "command": "ghost-trace.jumpToLine",
         "title": "Ghost Trace: Jump to Line"
-      },
-      {
-        "command": "ghost-trace.helloWorld",
-        "title": "Hello World"
       }
     ]
   },

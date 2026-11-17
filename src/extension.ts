@@ -65,7 +65,7 @@ export function activate(context: vscode.ExtensionContext) {
 	));
 
 	context.subscriptions.push(vscode.lm.registerTool<GhostTraceToolInput>(
-		'ghost_trace_diagnose',
+		'ghost_trace',
 		{
 			invoke: ({ input }) => {
 				const editor = vscode.window.activeTextEditor;
