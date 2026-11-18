@@ -31,7 +31,8 @@ Ghost Trace helps trace confusing diagnostics back to their likely upstream caus
 ## Build from Source
 
 ```sh
-git clone https://github.com.git/zyrndotio/ghost-trace.git
+git clone https://github.com/zyrndotio/Ghost-Trace.git
+
 cd ghost-trace
 bun install
 bun run compile
