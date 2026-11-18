@@ -5,7 +5,7 @@ Thanks for your interest in improving Ghost Trace. Bug reports, feature requests
 ## Set up the project
 
 ```sh
-git clone https://github.com.git/zyrndotio/ghost-trace.git
+git clone https://github.com/zyrndotio/Ghost-Trace.git
 cd ghost-trace
 bun install
 ```
