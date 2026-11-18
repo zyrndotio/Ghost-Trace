@@ -1,6 +1,6 @@
 # Ghost Trace (`ghost-trace`)
 
-Ghost Trace helps trace confusing diagnostics back to their likely upstream cause. It examines the complete active file with line numbers and the error diagnostics reported by VS Code, then gives guidance without editing your code.
+Ghost Trace helps trace confusing diagnostics back to their likely upstream cause. It examines complete source files with line numbers and their diagnostics reported by VS Code, then gives guidance without editing your code.
 
 ## Preview
 
@@ -8,11 +8,11 @@ Ghost Trace helps trace confusing diagnostics back to their likely upstream caus
 
 ## Features
 
-- **`@trace` chat participant:** Ask `@trace` to diagnose the active editor. It includes the numbered source and current error diagnostics from all files, then explains the likely root cause and why a later diagnostic may have cascaded from it.
-- **`#ghostTrace` Language Model Tool:** Reference `#ghostTrace` in Copilot Agent to invoke `ghost_trace_diagnose`. Its optional `targetLine` input focuses the diagnosis on a one-based line number.
-- **Clickable line-jump links:** `@trace` responses can include `[Line X]` links that navigate to the corresponding active-file line and highlight it briefly.
+- **Multi-file `@trace` analysis:** Pin or attach one or more files in Copilot Chat to analyze them together, including files that are not open in an editor. If no files are attached, Ghost Trace uses the active editor.
+- **`#ghostTrace` Language Model Tool:** Reference `#ghostTrace` in Copilot Agent to invoke `ghost_trace_diagnose`. Its optional `targetLine` input focuses the diagnosis on a one-based line number, and optional `filePaths` accepts workspace-relative or absolute paths for one or more files, including closed files.
+- **Clickable line-jump links:** Responses can include `[Line X]` links that navigate to the corresponding file and highlight its line briefly.
 - **Learning follow-ups:** `@trace` offers follow-up prompts about error cascades and prevention.
-- **Language-agnostic guidance:** Diagnosis is based on the active file's language and syntax rather than a fixed language list.
+- **Language-agnostic guidance:** Diagnosis is based on each supplied file's actual language and syntax rather than a fixed language list.
 - **Read-only behavior:** Ghost Trace explains the cause and how to address it; it never edits or applies changes to user code.
 
 ## Requirements
@@ -23,10 +23,10 @@ Ghost Trace helps trace confusing diagnostics back to their likely upstream caus
 
 ## Use
 
-1. Open a file with an error diagnostic.
-2. In Copilot Chat, ask `@trace` to investigate, or reference `#ghostTrace` in Copilot Agent.
-3. Optionally provide a `targetLine` when invoking the language model tool.
-4. Follow the explanation; in `@trace` responses, click a line link to navigate to and briefly highlight that location.
+1. Open a file with an error diagnostic, or pin/attach multiple files in Copilot Chat.
+2. Ask `@trace` to investigate, or reference `#ghostTrace` in Copilot Agent. For the tool, optionally provide `filePaths` (workspace-relative or absolute) and a `targetLine`.
+3. Review the per-file overview, status, root-cause location, cascade explanation, and fix guidance.
+4. Click a line link to navigate to and briefly highlight that location. Ghost Trace never edits or applies changes to your code.
 
 ## Build from Source
 

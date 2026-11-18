@@ -1,8 +1,8 @@
 {
   "name": "ghost-trace",
   "displayName": "ghost-trace",
-  "description": "Finds phantom errors on blank lines.",
-  "version": "0.0.2",
+  "description": "Finds phantom errors in your code on blank lines.",
+  "version": "0.3.0",
   "publisher": "zyrndotio",
   "author": "zyrndotio",
   "license": "MIT",
@@ -52,6 +52,13 @@
             "targetLine": {
               "type": "number",
               "description": "Optional one-based line number to focus the diagnosis on."
+            },
+            "filePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Optional workspace-relative or absolute paths of files to diagnose."
             }
           }
         }
